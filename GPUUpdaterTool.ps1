@@ -294,7 +294,7 @@ function GPUCurrentMode {
 
 function queryOS {
     #sets OS support
-    if (($system.OS_Version -like "*Windows 10*") -eq $true) {$gpu.OSID = '57' ; $system.OS_Supported = $false}
+    if (($system.OS_Version -like "*Windows 10*") -eq $true) {$gpu.OSID = '57' ; $system.OS_Supported = $true}
     elseif (($system.OS_Version -like "*Windows 8.1*") -eq $true) {$gpu.OSID = "41"; $system.OS_Supported = $false}
     elseif (($system.OS_Version -like "*Server 2016*") -eq $true) {$gpu.OSID = "74"; $system.OS_Supported = $true}
     elseif (($system.OS_Version -like "*Server 2019*") -eq $true) {$gpu.OSID = "74"; $system.OS_Supported = $true}
@@ -328,7 +328,7 @@ Type Y to continue, or N to exit.
 
 function webName {
     #Gets the unknown GPU name from a csv based on a deviceID found in the installedgpuid function
-    (New-Object System.Net.WebClient).DownloadFile("https://raw.githubusercontent.com/parsec-cloud/Cloud-GPU-Updater/master/Additional%20Files/GPUID.csv", $($system.Path + "\GPUID.CSV")) 
+    (New-Object System.Net.WebClient).DownloadFile("https://raw.githubusercontent.com/657870/Cloud-GPU-Updater/feature/windows10-support/Additional%20Files/GPUID.csv", $($system.Path + "\GPUID.CSV")) 
     Import-Csv "$($system.path)\GPUID.csv" -Delimiter ',' | Where-Object DeviceID -like *$($gpu.Device_ID)* | Select-Object -ExpandProperty GPUName
 }
 
@@ -522,7 +522,7 @@ function Test-RegistryValue {
 
 function DisableSecondMonitor {
     #downloads script to set GPU to WDDM if required
-    (New-Object System.Net.WebClient).DownloadFile("https://raw.githubusercontent.com/parsec-cloud/Cloud-GPU-Updater/master/Additional%20Files/DisableSecondMonitor.ps1", $($system.Path) + "\DisableSecondMonitor.ps1") 
+    (New-Object System.Net.WebClient).DownloadFile("https://raw.githubusercontent.com/657870/Cloud-GPU-Updater/feature/windows10-support/Additional%20Files/DisableSecondMonitor.ps1", $($system.Path) + "\DisableSecondMonitor.ps1") 
     Unblock-File -Path "$($system.Path)\DisableSecondMonitor.ps1"
 }
 
@@ -640,7 +640,7 @@ function rebootLogic {
 
 function setnvsmi {
     #downloads script to set GPU to WDDM if required
-    (New-Object System.Net.WebClient).DownloadFile("https://raw.githubusercontent.com/parsec-cloud/Cloud-GPU-Updater/master/Additional%20Files/NVSMI.ps1", $($system.Path) + "\NVSMI.ps1") 
+    (New-Object System.Net.WebClient).DownloadFile("https://raw.githubusercontent.com/657870/Cloud-GPU-Updater/feature/windows10-support/Additional%20Files/NVSMI.ps1", $($system.Path) + "\NVSMI.ps1") 
     Unblock-File -Path "$($system.Path)\NVSMI.ps1"
 }
 
