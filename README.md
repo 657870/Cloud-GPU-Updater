@@ -6,6 +6,7 @@ This script checks NVIDIA.com for updates, and will download and install graphic
 
 Windows Server 2016  
 Windows Server 2019  
+Windows 10  
 
 ### Supported GPUs 
  
@@ -21,11 +22,11 @@ Google T4 VW (Tesla T4 with Virtual Workstation Driver)
 
 ### Instructions  
    
-1. Download https://github.com/jamesstringerparsec/Cloud-GPU-Updater/archive/master.zip  
-2. Extract the folder, right click "GPU Updater Tool.ps1" and run with Powershell - if the script immediately closes, right click and click edit, then the green play button in the Powershell ISE toolbar.  
+1. Download https://github.com/657870/Cloud-GPU-Updater/archive/feature/windows10-support.zip  
+2. Extract the folder, right click "GPUUpdaterTool.ps1" and run with Powershell - if the script immediately closes, right click and click edit, then the green play button in the Powershell ISE toolbar.  
 
 ### Q&A  
 
-Q. Why aren't Windows 10, 8.1 or Server 2012 supported  
-A. There is no need currently for Windows 8.1 or Server 2012, we will investigate Windows 10 when it is generaly available.
+Q. Why aren't 8.1 or Server 2012 supported  
+A. There is no need currently for Windows 8.1 or Server 2012.
 
